@@ -1,3 +1,6 @@
+
+require("dotenv").config;
+const path=require("path");
 const fs = require('fs');
 const { ApolloServer, UserInputError } = require('apollo-server-express');
 const { GraphQLScalarType } = require('graphql');
@@ -60,7 +63,7 @@ app.use(staticService);
             res.sendFile(path);
         });
 
-        app.listen(3000, function () {
+        app.listen(process.env.PORT || 3000, function () {
             console.log('App started on port 3000');
         });
     } catch (err) {

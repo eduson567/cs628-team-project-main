@@ -1,4 +1,4 @@
-const url = 'mongodb://127.0.0.1/student_portal';
+const url = 'mongodb+srv://eduson:eduson567@cluster0.pzung7l.mongodb.net/?retryWrites=true&w=majority';
 const dbName = "student_portal"
 
 module.exports = { url, dbName };
