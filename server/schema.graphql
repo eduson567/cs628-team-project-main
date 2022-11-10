@@ -1,0 +1,63 @@
+
+type Login {
+    login_name: String!,
+    password: String!,
+    login_id: String!
+}
+
+type Register {
+    login_name: String!,
+    password: String!
+}
+
+type StudentProfile {
+    login_id: String!,
+    login_name: String!,
+    student_name: String,
+    first_name: String,
+    last_name: String,
+    data_of_birth: String,
+    email: String,
+    major: String,
+}
+
+type Course {
+    course_id: String!,
+    course_name: String!,
+    course_description: String!
+}
+
+type Assignment {
+    assignment_id: String!,
+    course_id: String!,
+    assigment_title: String!,
+    assigment_description: String!
+}
+
+type StudentAssignment {
+    assignment_id: String!,
+    submission_content: String!,
+    student_marks: Float
+}
+
+type StudentGrades {
+    login_id: String!,
+    course_id: String!,
+    grade: String!
+}
+
+type SearchResult {
+    login_id: String!,
+    login_name: String!
+}
+
+type Query {
+    login(login_name: String!, password: String!): String,
+    student_profile(login_id: String!): StudentProfile,
+    search(name: String!): [SearchResult]
+}
+
+type Mutation {
+    register(login_name: String!, password: String!, student_name: String!, date_of_birth: String!, major: String!): String,
+    update_details(login_id: String!, first_name: String!, last_name: String!, data_of_birth: String!, email: String!, major: String!): Boolean
+}
